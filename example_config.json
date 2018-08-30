@@ -1,0 +1,10 @@
+{
+    "server":"0.0.0.0",
+    "port_password": {
+        "port1": "password1",
+        "port2": "password2"
+    },
+    "timeout": 300,
+    "method": "aes-256-cfb",
+    "fast_open": true
+}
