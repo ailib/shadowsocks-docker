@@ -4,7 +4,7 @@
 
 # 准备
 
-``` 
+```
 git clone https://github.com/chiqj/ss-docker.git
 ```
 
@@ -89,4 +89,8 @@ docker run -d -p 8388:8388 shadowsocks -p 8388 -k password
 
 # docker-compose 部署
 
-待更。
+修改 `docker-compose.yaml`中端口映射为实际使用端口。
+
+```
+docker-compose up -d
+```
