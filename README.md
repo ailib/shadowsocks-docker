@@ -1,4 +1,4 @@
-# shadowsocks-docker-docker
+# shadowsocks-docker
 
 > 使用 Docker 快速部署 Shadowsocks。
 
