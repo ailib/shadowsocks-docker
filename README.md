@@ -18,6 +18,14 @@ cp sysctl.conf /etc/sysctl.d/99-shadowsocks.conf
 sudo reboot
 ```
 
+检查配置生效：
+
+```
+lsmod | grep bbr
+```
+
+如果出现 `tcp_bbr` 则说明正确开启了 bbr 算法。
+
 ## 生成 Shadowsocks 配置（可选）
 
 参考示例配置文件生成 Shadowsocks 配置：
@@ -54,10 +62,10 @@ docker build -t shadowsocks .
 运行时需要：
 
 - 指定端口映射；
-- 指定配置文件目录挂载，docker 镜像中配置文件目录为 `/shadowsocks`；
+- 指定配置文件目录挂载，docker 镜像中配置文件目录为 `/shadowsocks`，默认配置文件名为 `config.json`；
 
 ```
-docker run -d -p 8388:8388 -p 8389:8389 -v $PWD:/shadowsocks:ro shadowsocks
+docker run -d --name shadowsocks -p 8388-8390:8388-8390 -v <HOSTDIR>:/shadowsocks:ro shadowsocks
 ```
 
 ## 不使用配置文件
