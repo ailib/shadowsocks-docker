@@ -1,11 +1,11 @@
-# ss-docker
+# shadowsocks-docker-docker
 
 > 使用 Docker 快速部署 Shadowsocks。
 
 # 准备
 
 ```
-git clone https://github.com/chiqj/ss-docker.git
+git clone https://github.com/chiqj/shadowsocks-docker.git
 ```
 
 ## 修改内核参数
