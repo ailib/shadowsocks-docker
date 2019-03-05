@@ -65,7 +65,10 @@ docker build -t shadowsocks .
 - 指定配置文件目录挂载，docker 镜像中配置文件目录为 `/shadowsocks`，默认配置文件名为 `config.json`；
 
 ```
-docker run -d --name shadowsocks -p 8388-8390:8388-8390 -v <HOSTDIR>:/shadowsocks:ro shadowsocks
+docker run -d --name shadowsocks \
+  -p 8388-8390:8388-8390 \
+  -v <HOSTDIR>:/shadowsocks:ro \
+  --restart always shadowsocks
 ```
 
 ## 不使用配置文件
