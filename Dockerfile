@@ -1,8 +1,9 @@
-FROM python:alpine
+FROM python:3.7-alpine
 
 LABEL name="Shadowsocks"
 
-RUN pip install --no-cache-dir shadowsocks
+RUN apk add git
+RUN pip install git+https://github.com/shadowsocks/shadowsocks.git@2.9.1
 COPY sysctl.conf /etc/sysctl.d/shadowsocks.conf
 WORKDIR /shadowsocks
 
