@@ -10,10 +10,10 @@ git clone https://github.com/chiqj/shadowsocks-docker.git
 
 ## 修改内核参数
 
-`sysctl.conf` 是 Shadowsocks 推荐的内核参数，最好在宿主机上也应用同样的配置。以 Ubuntu 16.04 为例：
+`sysctl.conf` 是 Shadowsocks 推荐的内核参数，最好在宿主机上也应用同样的配置。以 Ubuntu 18.04 为例：
 
 ```
-cd ss-docker
+cd shadowsocks-docker
 cp sysctl.conf /etc/sysctl.d/99-shadowsocks.conf
 sudo reboot
 ```
