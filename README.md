@@ -4,6 +4,8 @@
 
 # 准备
 
+## 拉代码
+
 ```
 git clone https://github.com/chiqj/shadowsocks-docker.git
 ```
@@ -26,7 +28,9 @@ lsmod | grep bbr
 
 如果出现 `tcp_bbr` 则说明正确开启了 bbr 算法。
 
-## 生成 Shadowsocks 配置（可选）
+# 使用配置文件运行
+
+## 生成 Shadowsocks 配置
 
 参考示例配置文件生成 Shadowsocks 配置：
 
@@ -49,8 +53,6 @@ cp example_config.json config.json
 }
 ```
 
-# docker run 部署
-
 构建镜像：
 
 ```
@@ -71,7 +73,7 @@ docker run -d --name shadowsocks \
   --restart always shadowsocks
 ```
 
-## 不使用配置文件
+# 不使用配置文件运行
 
 运行时需要：
 
@@ -96,12 +98,4 @@ docker run -d --name shadowsocks \
 
 ```
 docker run -d -p 8388:8388 shadowsocks -p 8388 -k password
-```
-
-# docker-compose 部署
-
-修改 `docker-compose.yaml`中端口映射为实际使用端口。
-
-```
-docker-compose up -d
 ```
